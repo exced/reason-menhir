@@ -1,0 +1,75 @@
+[(Ast.Var (
+    [("a",
+      (Some (Ast.Ident ("1",
+               { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                 pos_cnum = 8 }
+               ))),
+      { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 4 })],
+    { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 0 }));
+  (Ast.Var (
+     [("b",
+       (Some (Ast.Ident ("2",
+                { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                  pos_cnum = 19 }
+                ))),
+       { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 15 })],
+     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 11 }));
+  (Ast.Var (
+     [("c",
+       (Some (Ast.Binary (`Add,
+                (Ast.Ident ("a",
+                   { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                     pos_cnum = 30 }
+                   )),
+                (Ast.Ident ("b",
+                   { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                     pos_cnum = 34 }
+                   )),
+                { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                  pos_cnum = 32 }
+                ))),
+       { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 26 })],
+     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 22 }));
+  (Ast.FunctionDecl ("test", [],
+     [(Ast.For (
+         `Var ([("i",
+                 (Some (Ast.Ident ("0",
+                          { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                            pos_cnum = 71 }
+                          ))),
+                 { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                   pos_cnum = 67 })
+                 ]),
+         (Some (Ast.Binary (`Lt,
+                  (Ast.Ident ("i",
+                     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                       pos_cnum = 74 }
+                     )),
+                  (Ast.Ident ("3",
+                     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                       pos_cnum = 78 }
+                     )),
+                  { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                    pos_cnum = 76 }
+                  ))),
+         (Some (Ast.Unary (`PostIncr,
+                  (Ast.Ident ("i",
+                     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                       pos_cnum = 81 }
+                     )),
+                  { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                    pos_cnum = 82 }
+                  ))),
+         (Ast.Expr (
+            (Ast.Object ([],
+               { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0;
+                 pos_cnum = 86 }
+               )),
+            { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 86
+              }
+            )),
+         { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 58 }
+         ))
+       ],
+     { Lexing.pos_fname = ""; pos_lnum = 1; pos_bol = 0; pos_cnum = 38 }))
+  ]

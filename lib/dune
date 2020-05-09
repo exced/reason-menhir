@@ -1,0 +1,12 @@
+(ocamllex
+  (modules lexer))
+
+(menhir
+  (modules parser))
+
+(library
+  (name lib)
+  (flags (-w -40 -w +26))
+  (public_name jsparser)
+  (libraries  sedlex ppx_deriving console.lib pastel.lib)
+  (preprocess (pps ppx_deriving.show sedlex.ppx)))

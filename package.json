@@ -1,0 +1,29 @@
+{
+  "name": "jsparser",
+  "version": "0.1.0",
+  "description": "JS parser",
+  "license": "MIT",
+  "esy": {
+    "build": "refmterr dune build -p #{self.name}",
+    "NOTE": "Optional release Section. Customizes result of `esy release`",
+    "release": { "bin": [ "App" ] },
+    "buildEnv": { "ODOC_SYNTAX": "re" }
+  },
+  "scripts": { "test": "esy x App", "doc": "esy dune build @doc" },
+  "dependencies": {
+    "@esy-ocaml/reason": ">= 3.4.0 < 3.6.0",
+    "@opam/dune": "*",
+    "@opam/ppx_deriving": "4.4",
+    "@opam/sedlex": "*",
+    "@reason-native/console": "*",
+    "@reason-native/pastel": "*",
+    "@reason-native/rely": "*",
+    "ocaml": "~4.8.1000",
+    "refmterr": "*"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*",
+    "ocaml": "~4.8.1000",
+    "@opam/odoc": "*"
+  }
+}
